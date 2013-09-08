@@ -113,8 +113,7 @@ public class WhirlView extends View {
         bitmap.setPixels(compiledColors, 0, matrixWidth, 0, 0, matrixWidth, matrixHeight);
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
+    protected void measureFps(){
         frameCounter++;
         long now = SystemClock.uptimeMillis();
         long delta = now - lastFpsCalcUptime;
@@ -125,9 +124,13 @@ public class WhirlView extends View {
             lastFpsCalcUptime = now;
             Log.i("GWhirl.FPS", "Fps=" + fps + " Average_fps=" + avgFps);
         }
-        stepColors();
-        float sX = (float) canvas.getWidth() / matrixWidth;
-        float sY = (float) canvas.getHeight() / matrixHeight;
+    }
+
+    protected void drawWhirl(Canvas canvas){
+        int cWidth =            canvas.getWidth();
+        int cHeight = canvas.getHeight();
+        float sX = (float) cWidth/ matrixWidth;
+        float sY = (float)  cHeight/ matrixHeight;
         canvas.scale(sX, sY);
         canvas.drawBitmap(bitmap, 0, 0, paint);
         canvas.scale((float) 1 / sX, (float) 1 / sY);
@@ -139,6 +142,13 @@ public class WhirlView extends View {
             canvas.drawText("fps=" + (float) Math.round(1000 * fps) / 1000, 10, 40, paint);
             canvas.drawText("average fps=" + (float) Math.round(1000 * avgFps) / 1000, 10, 85, paint);
         }
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        measureFps();
+        stepColors();
+        drawWhirl(canvas);
         postInvalidate();
     }
 

@@ -40,7 +40,7 @@
     <file path="/Dummy.txt" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378662186546" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378662651117" ignored="false" />
     <file path="/WhirlActivity.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378677555586" ignored="false" />
-    <file path="/WhirlView.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378679897299" ignored="false" />
+    <file path="/WhirlView.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378683142297" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +135,7 @@
       <file leaf-file-name="WhirlView.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="131" column="28" selection-start="4526" selection-end="4526" vertical-scroll-proportion="0.09319899">
+            <state line="132" column="50" selection-start="4543" selection-end="4543" vertical-scroll-proportion="3.9219143">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -542,7 +542,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="59" y="27" width="1281" height="740" extended-state="1" />
+    <frame x="59" y="27" width="1281" height="740" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -736,7 +736,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="28" selection-start="4526" selection-end="4526" vertical-scroll-proportion="0.09319899">
+        <state line="132" column="50" selection-start="4543" selection-end="4543" vertical-scroll-proportion="3.9219143">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
