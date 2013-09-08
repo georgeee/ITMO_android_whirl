@@ -22,4 +22,13 @@ public class WhirlActivity extends Activity {
         setContentView(mainView);
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();    //To change body of overridden methods use File | Settings | File Templates.
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();    //To change body of overridden methods use File | Settings | File Templates.
+    }
 }

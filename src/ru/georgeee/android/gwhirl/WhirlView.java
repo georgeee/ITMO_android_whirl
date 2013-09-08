@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 
 import java.util.Random;
@@ -37,6 +38,7 @@ public class WhirlView extends View {
     protected float avgFps = 0;
     protected int measureCount = 0;
 
+
     public WhirlView(Context context, int colorCount, int width, int height) {
         super(context);
         Random rand = new Random(System.currentTimeMillis());
@@ -61,6 +63,7 @@ public class WhirlView extends View {
         stepColors();
     }
 
+
     public WhirlView(Context context, int colorCount) {
         this(context, colorCount, DEFAULT_WIDTH, DEFAULT_HEIGHT);
     }
@@ -78,7 +81,7 @@ public class WhirlView extends View {
     }
 
     protected void stepColors() {
-        int i, j, i0, j0, j2, i5, next_color, new_color;
+        int i, j, i0, j0, j2, i5, next_color;
         i = j = 0;
         for (int _colorPlace = 0; _colorPlace < colorPlaceCount; ++_colorPlace, ++j) {
             if (j == matrixWidth) {
@@ -94,31 +97,12 @@ public class WhirlView extends View {
             j0 = j == 0 ? matrixWidth - 1 : j - 1;
             j2 = j == matrixWidth - 1 ? 0 : j + 1;
             i5 = i == matrixHeight - 1 ? 0 : i + 1;
-            new_color = colorMap[i][j];
-            next_color = new_color + 1;
+            next_color = colorMap[i][j] + 1;
             if (next_color == colors.length) next_color = 0;
-            if (colorMap[i0][j0] == next_color) {
-                colorMapCopy[i][j] = next_color;
-                compiledColors[_colorPlace] = colors[next_color];
-            } else if (colorMap[i0][j] == next_color) {
-                colorMapCopy[i][j] = next_color;
-                compiledColors[_colorPlace] = colors[next_color];
-            } else if (colorMap[i0][j2] == next_color) {
-                colorMapCopy[i][j] = next_color;
-                compiledColors[_colorPlace] = colors[next_color];
-            } else if (colorMap[i][j0] == next_color) {
-                colorMapCopy[i][j] = next_color;
-                compiledColors[_colorPlace] = colors[next_color];
-            } else if (colorMap[i][j2] == next_color) {
-                colorMapCopy[i][j] = next_color;
-                compiledColors[_colorPlace] = colors[next_color];
-            } else if (colorMap[i5][j0] == next_color) {
-                colorMapCopy[i][j] = next_color;
-                compiledColors[_colorPlace] = colors[next_color];
-            } else if (colorMap[i5][j] == next_color) {
-                colorMapCopy[i][j] = next_color;
-                compiledColors[_colorPlace] = colors[next_color];
-            } else if (colorMap[i5][j2] == next_color) {
+            if (colorMap[i0][j0] == next_color || colorMap[i0][j] == next_color
+                    || colorMap[i0][j2] == next_color || colorMap[i][j0] == next_color
+                    || colorMap[i][j2] == next_color || colorMap[i5][j0] == next_color
+                    || colorMap[i5][j] == next_color || colorMap[i5][j2] == next_color) {
                 colorMapCopy[i][j] = next_color;
                 compiledColors[_colorPlace] = colors[next_color];
             }
@@ -131,7 +115,16 @@ public class WhirlView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        measureFps();
+        frameCounter++;
+        long now = SystemClock.uptimeMillis();
+        long delta = now - lastFpsCalcUptime;
+        if (delta > FPS_CALC_INTERVAL) {
+            fps = (float) frameCounter * FPS_CALC_INTERVAL / delta;
+            avgFps = (avgFps * measureCount + fps) / (++measureCount);
+            frameCounter = 0;
+            lastFpsCalcUptime = now;
+            Log.i("GWhirl.FPS", "Fps=" + fps + " Average_fps=" + avgFps);
+        }
         stepColors();
         float sX = (float) canvas.getWidth() / matrixWidth;
         float sY = (float) canvas.getHeight() / matrixHeight;
@@ -147,18 +140,6 @@ public class WhirlView extends View {
             canvas.drawText("average fps=" + (float) Math.round(1000 * avgFps) / 1000, 10, 85, paint);
         }
         postInvalidate();
-    }
-
-    protected void measureFps() {
-        frameCounter++;
-        long now = SystemClock.uptimeMillis();
-        long delta = now - lastFpsCalcUptime;
-        if (delta > FPS_CALC_INTERVAL) {
-            fps = (float) frameCounter * FPS_CALC_INTERVAL / delta;
-            avgFps = (avgFps * measureCount + fps) / (++measureCount);
-            frameCounter = 0;
-            lastFpsCalcUptime = now;
-        }
     }
 
     protected void prepareFpsCounter() {
