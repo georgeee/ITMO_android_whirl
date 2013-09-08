@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="119dp"
+            android:layout_height="24dp"
+            android:text="Color count"
+            android:id="@+id/colorCountLabel" android:layout_gravity="left|center_vertical" android:textSize="20dp"/>
+    <SeekBar
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/colorCountBar" android:layout_gravity="left|center_vertical" android:max="50"
+            android:progress="15" android:indeterminate="false"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/colorCountText" android:layout_gravity="left|center_vertical" android:textSize="16dp"
+            android:text="15"/>
+    <CheckBox
+            android:layout_width="248dp"
+            android:layout_height="wrap_content"
+            android:text="Show FPS"
+            android:id="@+id/showFPSBox" android:layout_gravity="left|center_vertical" android:checked="true"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Height"
+            android:id="@+id/textView1" android:layout_gravity="left|center_vertical" android:textSize="16dp"/>
+    <EditText
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:text="320"
+            android:id="@+id/heightTextField" android:layout_gravity="left|center_vertical"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Width"
+            android:id="@+id/textView2" android:layout_gravity="left|center_vertical" android:textSize="16dp"/>
+    <EditText
+            android:layout_width="93dp"
+            android:layout_height="wrap_content"
+            android:text="240"
+            android:id="@+id/widthTextField" android:layout_gravity="left|center_vertical"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Action!"
+            android:id="@+id/actionButton" android:layout_gravity="left|center_vertical"/>
+</LinearLayout>
