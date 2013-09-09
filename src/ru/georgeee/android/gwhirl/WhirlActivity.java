@@ -3,34 +3,37 @@ package ru.georgeee.android.gwhirl;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.WindowManager;
 
 public class WhirlActivity extends Activity {
-
+    public static final int THREAD_COUNT = 2 * Runtime.getRuntime().availableProcessors();
     private WhirlSurfaceView mainView;
-    private int height, width, colorCount;
-    private boolean showFPS;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED, WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
-        showFPS = getIntent().getExtras().getBoolean(MainActivity.SHOW_FPS_KEY);
-        height = getIntent().getExtras().getInt(MainActivity.HEIGHT_KEY);
-        width = getIntent().getExtras().getInt(MainActivity.WIDTH_KEY);
-        colorCount = getIntent().getExtras().getInt(MainActivity.COLOR_COUNT_KEY);
-        mainView = new WhirlSurfaceView(this);
+        boolean showFPS = getIntent().getExtras().getBoolean(MainActivity.SHOW_FPS_KEY);
+        int height = getIntent().getExtras().getInt(MainActivity.HEIGHT_KEY);
+        int width = getIntent().getExtras().getInt(MainActivity.WIDTH_KEY);
+        int colorCount = getIntent().getExtras().getInt(MainActivity.COLOR_COUNT_KEY);
+        WhirlManager whirlManager = new WhirlManager(colorCount, width, height);
+        whirlManager.showFPS = showFPS;
+        mainView = new WhirlSurfaceView(this, whirlManager, THREAD_COUNT);
         setContentView(mainView);
     }
 
     public class WhirlSurfaceView extends SurfaceView implements SurfaceHolder.Callback {
-        private WhirlDrawThread drawThread;
+        public final int threadCount;
+        private WhirlDrawThread[] drawThreads;
+        private WhirlManager whirlManager;
 
-        public WhirlSurfaceView(Context context) {
+        public WhirlSurfaceView(Context context, WhirlManager whirlManager, int threadCount) {
             super(context);
+            this.whirlManager = whirlManager;
+            this.threadCount = threadCount;
             getHolder().addCallback(this);
         }
 
@@ -41,19 +44,21 @@ public class WhirlActivity extends Activity {
 
         @Override
         public void surfaceCreated(SurfaceHolder holder) {
-            drawThread = new WhirlDrawThread(colorCount, width, height);
-            drawThread.setSurfaceHolder(getHolder());
-            drawThread.setRunning(true);
-            drawThread.start();
+            drawThreads = new WhirlDrawThread[threadCount];
+            for (int i = 0; i < threadCount; ++i) {
+                WhirlDrawThread drawThread = drawThreads[i] = new WhirlDrawThread(whirlManager, holder);
+                drawThread.setRunning(true);
+                drawThread.start();
+            }
         }
 
         @Override
         public void surfaceDestroyed(SurfaceHolder holder) {
             boolean retry = true;
-            drawThread.setRunning(false);
+            for (int i = 0; i < threadCount; ++i) drawThreads[i].setRunning(false);
             while (retry) {
                 try {
-                    drawThread.join();
+                    for (int i = 0; i < threadCount; ++i) drawThreads[i].join();
                     retry = false;
                 } catch (InterruptedException e) {
                 }

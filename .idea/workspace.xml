@@ -23,9 +23,6 @@
       </GlobalState>
     </option>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="d62bb487-5289-41fa-b5ac-bd37a79e4e77" name="Default" comment="" />
     <ignored path="GWhirl.iws" />
@@ -34,7 +31,7 @@
     <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378549033176" ignored="false" />
     <file path="/main.xml" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378669620582" ignored="false" />
     <file path="$PROJECT_DIR$/gen/ru/georgeee/android/Manifest.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378543071367" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/ru/georgeee/android/BuildConfig.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378543072366" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/ru/georgeee/android/BuildConfig.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378770717535" ignored="false" />
     <file path="$PROJECT_DIR$/gen/ru/georgeee/android/R.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378664015330" ignored="false" />
     <file path="/MainView.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378662013923" ignored="false" />
     <file path="/MainActivity.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378670635080" ignored="false" />
@@ -42,8 +39,10 @@
     <file path="$PROJECT_DIR$/../hwacc/src/com/kexanoids/hwacc/SingleThreadActivity.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378557978195" ignored="false" />
     <file path="/Dummy.txt" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378662186546" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378662651117" ignored="false" />
-    <file path="/WhirlActivity.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378685343382" ignored="false" />
-    <file path="/WhirlView.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378685656667" ignored="false" />
+    <file path="/WhirlActivity.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378770009250" ignored="false" />
+    <file path="/WhirlView.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378683142297" ignored="false" />
+    <file path="/WhirlDrawThread.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378766413734" ignored="false" />
+    <file path="/WhirlManager.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378769823341" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,13 +103,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WhirlActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="WhirlActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="50" selection-start="2103" selection-end="2103" vertical-scroll-proportion="0.0">
+            <state line="10" column="90" selection-start="364" selection-end="364" vertical-scroll-proportion="0.038860105">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WhirlManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -118,10 +126,17 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="9" column="0" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WhirlDrawThread.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlDrawThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="0" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,19 +144,8 @@
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="54" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0">
+            <state line="15" column="66" selection-start="803" selection-end="803" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WhirlDrawThread.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlDrawThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="167" column="14" selection-start="5962" selection-end="5962" vertical-scroll-proportion="0.73489934">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -163,17 +167,18 @@
       <list>
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlView.java" />
+        <option value="$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlManager.java" />
         <option value="$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlActivity.java" />
+        <option value="$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlDrawThread.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="59" />
+    <option name="x" value="60" />
     <option name="y" value="27" />
-    <option name="width" value="1281" />
+    <option name="width" value="1271" />
     <option name="height" value="740" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -202,7 +207,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -345,6 +349,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -367,8 +372,8 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Android Application.GWhirl">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -403,6 +408,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -428,19 +446,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -546,31 +551,31 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="59" y="27" width="1281" height="740" extended-state="0" />
-    <editor active="true" />
+    <frame x="60" y="27" width="1271" height="740" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32823813" sideWeight="0.8743633" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.49959514" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24939272" sideWeight="0.67402375" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4499151" sideWeight="0.16842106" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27843803" sideWeight="0.27088404" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.49878544" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4499151" sideWeight="0.83157897" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282313" sideWeight="0.49878347" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20203735" sideWeight="0.83157897" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24979919" sideWeight="0.8743633" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24858299" sideWeight="0.5500849" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28183362" sideWeight="0.72955465" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24816327" sideWeight="0.72156197" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27749577" sideWeight="0.72911596" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851407" sideWeight="0.67232597" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851407" sideWeight="0.67232597" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32823813" sideWeight="0.8743633" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.8743633" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -640,13 +645,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="39" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///opt/adt-bundle-linux-x86_64-20130729/sdk/platforms/android-18/android.jar!/java/util/Random.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="15" selection-start="730" selection-end="730" vertical-scroll-proportion="0.64400715" />
@@ -660,13 +658,6 @@
     <entry file="jar:///opt/adt-bundle-linux-x86_64-20130729/sdk/platforms/android-18/android.jar!/android/view/View.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="521" column="21" selection-start="25267" selection-end="25267" vertical-scroll-proportion="0.33193278" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="54" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/drawable-xhdpi/ic_launcher.png">
@@ -708,39 +699,45 @@
     </entry>
     <entry file="jar:///opt/adt-bundle-linux-x86_64-20130729/sdk/platforms/android-18/android.jar!/java/util/Timer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="11" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="13" column="11" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar:///opt/adt-bundle-linux-x86_64-20130729/sdk/platforms/android-18/android.jar!/java/util/TimerTask.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="25" selection-start="398" selection-end="398" vertical-scroll-proportion="0.4054054">
+        <state line="13" column="25" selection-start="398" selection-end="398" vertical-scroll-proportion="0.4054054" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="66" selection-start="803" selection-end="803" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlDrawThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="9" column="0" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="50" selection-start="2103" selection-end="2103" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlDrawThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="14" selection-start="5962" selection-end="5962" vertical-scroll-proportion="0.73489934">
+        <state line="10" column="90" selection-start="364" selection-end="364" vertical-scroll-proportion="0.038860105">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

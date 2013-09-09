@@ -8,9 +8,6 @@ import android.view.View.OnClickListener;
 import android.widget.*;
 import ru.georgeee.android.R;
 
-/**
- * Main screen to choose single thread or another thread drawing model.
- */
 public class MainActivity extends Activity {
 
     public static final String COLOR_COUNT_KEY = "color_count";
