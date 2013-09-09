@@ -1,12 +1,11 @@
 package ru.georgeee.android.gwhirl;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.SystemClock;
 import android.util.Log;
-import android.view.View;
+import android.view.SurfaceHolder;
 
 import java.util.Random;
 
@@ -17,7 +16,7 @@ import java.util.Random;
  * Time: 12:36
  * To change this template use File | Settings | File Templates.
  */
-public class WhirlView extends View {
+public class WhirlDrawThread extends Thread {
     public static final int DEFAULT_HEIGHT = 320;
     public static final int DEFAULT_WIDTH = 240;
     public static final int DEFAULT_COLOR_COUNT = 15;
@@ -37,10 +36,10 @@ public class WhirlView extends View {
     protected float fps;
     protected float avgFps = 0;
     protected int measureCount = 0;
+    private boolean runFlag = false;
+    private SurfaceHolder surfaceHolder;
 
-
-    public WhirlView(Context context, int colorCount, int width, int height) {
-        super(context);
+    public WhirlDrawThread(int colorCount, int width, int height) {
         Random rand = new Random(System.currentTimeMillis());
         colorPlaceCount = height * width;
         this.matrixWidth = width;
@@ -59,17 +58,21 @@ public class WhirlView extends View {
             }
         }
         paint = new Paint();
-        prepareFpsCounter();
+        lastFpsCalcUptime = SystemClock.uptimeMillis();
+        frameCounter = 0;
         stepColors();
     }
 
-
-    public WhirlView(Context context, int colorCount) {
-        this(context, colorCount, DEFAULT_WIDTH, DEFAULT_HEIGHT);
+    public WhirlDrawThread(int colorCount) {
+        this(colorCount, DEFAULT_WIDTH, DEFAULT_HEIGHT);
     }
 
-    public WhirlView(Context context) {
-        this(context, DEFAULT_COLOR_COUNT);
+    public void setSurfaceHolder(SurfaceHolder surfaceHolder) {
+        this.surfaceHolder = surfaceHolder;
+    }
+
+    public void setRunning(boolean runFlag) {
+        this.runFlag = runFlag;
     }
 
     public int getMatrixHeight() {
@@ -113,7 +116,7 @@ public class WhirlView extends View {
         bitmap.setPixels(compiledColors, 0, matrixWidth, 0, 0, matrixWidth, matrixHeight);
     }
 
-    protected void measureFps(){
+    protected void measureFps() {
         frameCounter++;
         long now = SystemClock.uptimeMillis();
         long delta = now - lastFpsCalcUptime;
@@ -126,11 +129,11 @@ public class WhirlView extends View {
         }
     }
 
-    protected void drawWhirl(Canvas canvas){
-        int cWidth =            canvas.getWidth();
+    protected void drawWhirl(Canvas canvas) {
+        int cWidth = canvas.getWidth();
         int cHeight = canvas.getHeight();
-        float sX = (float) cWidth/ matrixWidth;
-        float sY = (float)  cHeight/ matrixHeight;
+        float sX = (float) cWidth / matrixWidth;
+        float sY = (float) cHeight / matrixHeight;
         canvas.scale(sX, sY);
         canvas.drawBitmap(bitmap, 0, 0, paint);
         canvas.scale((float) 1 / sX, (float) 1 / sY);
@@ -145,15 +148,26 @@ public class WhirlView extends View {
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
-        measureFps();
-        stepColors();
-        drawWhirl(canvas);
-        postInvalidate();
-    }
-
-    protected void prepareFpsCounter() {
-        lastFpsCalcUptime = SystemClock.uptimeMillis();
-        frameCounter = 0;
+    public void run() {
+        Canvas canvas;
+        while (runFlag) {
+            measureFps();
+            stepColors();
+            canvas = null;
+            while (canvas == null) {
+                try {
+                    // получаем объект Canvas и выполняем отрисовку
+                    canvas = surfaceHolder.lockCanvas(null);
+                    synchronized (surfaceHolder) {
+                        if (canvas != null) drawWhirl(canvas);
+                    }
+                } finally {
+                    if (canvas != null) {
+                        // отрисовка выполнена. выводим результат на экран
+                        surfaceHolder.unlockCanvasAndPost(canvas);
+                    }
+                }
+            }
+        }
     }
 }

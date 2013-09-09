@@ -23,6 +23,9 @@
       </GlobalState>
     </option>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d62bb487-5289-41fa-b5ac-bd37a79e4e77" name="Default" comment="" />
     <ignored path="GWhirl.iws" />
@@ -39,8 +42,8 @@
     <file path="$PROJECT_DIR$/../hwacc/src/com/kexanoids/hwacc/SingleThreadActivity.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378557978195" ignored="false" />
     <file path="/Dummy.txt" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378662186546" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378662651117" ignored="false" />
-    <file path="/WhirlActivity.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378677555586" ignored="false" />
-    <file path="/WhirlView.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378683142297" ignored="false" />
+    <file path="/WhirlActivity.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378685343382" ignored="false" />
+    <file path="/WhirlView.java" changelist="d62bb487-5289-41fa-b5ac-bd37a79e4e77" time="1378685656667" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +107,7 @@
       <file leaf-file-name="WhirlActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="0" selection-start="1242" selection-end="1242" vertical-scroll-proportion="0.0">
+            <state line="57" column="50" selection-start="2103" selection-end="2103" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -132,10 +135,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WhirlView.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlView.java">
+      <file leaf-file-name="WhirlDrawThread.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlDrawThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="50" selection-start="4543" selection-end="4543" vertical-scroll-proportion="3.9219143">
+            <state line="167" column="14" selection-start="5962" selection-end="5962" vertical-scroll-proportion="0.73489934">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -161,8 +164,9 @@
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlActivity.java" />
         <option value="$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlView.java" />
+        <option value="$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlActivity.java" />
+        <option value="$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlDrawThread.java" />
       </list>
     </option>
   </component>
@@ -549,24 +553,24 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32823813" sideWeight="0.8743633" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.49959514" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24939272" sideWeight="0.67402375" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28183362" sideWeight="0.27044535" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4499151" sideWeight="0.16842106" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.49878544" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20203735" sideWeight="0.83157897" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4499151" sideWeight="0.83157897" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24979919" sideWeight="0.8743633" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24858299" sideWeight="0.7181664" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28183362" sideWeight="0.72955465" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24858299" sideWeight="0.5500849" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28183362" sideWeight="0.72955465" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851407" sideWeight="0.67232597" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851407" sideWeight="0.67232597" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.8743633" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -727,16 +731,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="1242" selection-end="1242" vertical-scroll-proportion="0.0">
+        <state line="57" column="50" selection-start="2103" selection-end="2103" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlView.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/georgeee/android/gwhirl/WhirlDrawThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="50" selection-start="4543" selection-end="4543" vertical-scroll-proportion="3.9219143">
+        <state line="167" column="14" selection-start="5962" selection-end="5962" vertical-scroll-proportion="0.73489934">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
