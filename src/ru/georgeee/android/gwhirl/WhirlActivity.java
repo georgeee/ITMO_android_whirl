@@ -16,10 +16,14 @@ public class WhirlActivity extends Activity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED, WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         boolean showFPS = getIntent().getExtras().getBoolean(MainActivity.SHOW_FPS_KEY);
+        boolean doScale = getIntent().getExtras().getBoolean(MainActivity.DO_SCALE_KEY);
         int height = getIntent().getExtras().getInt(MainActivity.HEIGHT_KEY);
         int width = getIntent().getExtras().getInt(MainActivity.WIDTH_KEY);
         int colorCount = getIntent().getExtras().getInt(MainActivity.COLOR_COUNT_KEY);
+        int algorithm = getIntent().getExtras().getInt(MainActivity.ALGORITHM_KEY);
         WhirlManager whirlManager = new WhirlManager(colorCount, width, height);
+        whirlManager.algorithm = algorithm;
+        whirlManager.doScale = doScale;
         whirlManager.showFPS = showFPS;
         mainView = new WhirlSurfaceView(this, whirlManager, THREAD_COUNT);
         setContentView(mainView);
